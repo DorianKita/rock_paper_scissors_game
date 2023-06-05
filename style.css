@@ -89,6 +89,13 @@ footer {
     color: #fff;
 }
 
+footer div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
 footer a {
     color: white;
     text-decoration: none;

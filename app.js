@@ -32,20 +32,44 @@ function aiChoice() {
 function checkResult(player, ai) {
     if (player == ai) {
         return "draw"
-    } else if ((player === "paper" && ai === "rock") || (player === "rock" && ai === "scissors") || (player === "scissors" && ai === "paper")) {
+    } else if ((player === "Paper" && ai === "Rock") || (player === "Rock" && ai === "Scissors") || (player === "Scissors" && ai === "Paper")) {
         return "win"
     } else {
         return "loss"
     };
 };
 
+function publishResult(player, ai, result) {
+    document.querySelector("[data-summary=your-choice]").textContent = player;
+    document.querySelector("[data-summary=ai-choice]").textContent = ai;
+    document.querySelector(".numbers span").textContent = gameSummary.numbers
+
+    if (result === "win") {
+        gameSummary.wins++
+        document.querySelector(".wins span").textContent = gameSummary.wins
+        document.querySelector("[data-summary=who-win]").style.color = "#8fbf60"
+        document.querySelector("[data-summary=who-win]").textContent = "You won!"
+    } else if (result === "loss") {
+        gameSummary.losses++
+        document.querySelector(".losses span").textContent = gameSummary.losses
+        document.querySelector("[data-summary=who-win]").style.color = "red"
+        document.querySelector("[data-summary=who-win]").textContent = "You lose!"
+    } else {
+        gameSummary.draws++
+        document.querySelector(".draws span").textContent = gameSummary.draws
+        document.querySelector("[data-summary=who-win]").style.color = "grey"
+        document.querySelector("[data-summary=who-win]").textContent = "Draw!"
+    }
+};
+
 function startGame() {
     if (!game.playerHand) return alert("Choose your hand!");
-
+    gameSummary.numbers++
     game.aiHand = aiChoice();
 
     const gameResult = checkResult(game.playerHand, game.aiHand);
-
+    console.log(gameResult)
+    publishResult(game.playerHand, game.aiHand, gameResult);
 };
 
 btn.addEventListener("click", startGame);
