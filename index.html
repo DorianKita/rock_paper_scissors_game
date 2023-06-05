@@ -10,10 +10,33 @@
 </head>
 
 <body>
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="select">
+        <img data-option="paper" src="./img/paper.png" title="Paper" alt="paper" class="first">
+        <img data-option="rock" src="./img/rock.png" title="Rock" alt="rock">
+        <img data-option="scissors" src="./img/scissors.png" title="Scissors" alt="scissors">
+    </div>
 
+    <button class="start">Let's play!</button>
 
+    <div class="panel-left">
+        <h3>Game result</h3>
+        <p>Your choice: <span data-summary="your-choice"></span></p>
+        <p>Computer choice:<span data-summary="ai-choice"></span></p>
+        <h2>Winner:<span data-summary="who-win"></span></h2>
+    </div>
 
+    <div class="panel-right">
+        <h3>Summary results</h3>
+        <p class="numbers">Games: <span>0</span></p>
+        <p class="wins">Won: <span>0</span></p>
+        <p class="losses">Losses: <span>0</span></p>
+        <p class="draws">Draws: <span>0</span></p>
+    </div>
 
+    <footer><a
+            href="https://www.freepik.com/free-vector/icons-set-hand-gestures-vector-illustration_10603788.htm#page=2&query=rock%20paper%20scissors&position=20&from_view=search&track=ais">Image
+            by macrovector</a> on Freepik</footer>
     <script src="app.js"></script>
 </body>
 
