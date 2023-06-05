@@ -26,14 +26,26 @@ hands.forEach(hand => {
 function aiChoice() {
     const index = Math.floor(Math.random() * 3)
     const aiHand = hands[index].dataset.option
-    console.log(aiHand)
     return aiHand
 };
 
-function startGame() {
-    if (!game.playerHand) return alert("Choose your hand!")
+function checkResult(player, ai) {
+    if (player == ai) {
+        return "draw"
+    } else if ((player === "paper" && ai === "rock") || (player === "rock" && ai === "scissors") || (player === "scissors" && ai === "paper")) {
+        return "win"
+    } else {
+        return "loss"
+    };
+};
 
-    game.aiHand = aiChoice()
+function startGame() {
+    if (!game.playerHand) return alert("Choose your hand!");
+
+    game.aiHand = aiChoice();
+
+    const gameResult = checkResult(game.playerHand, game.aiHand);
+
 };
 
 btn.addEventListener("click", startGame);
