@@ -54,6 +54,7 @@ h2 {
 .select img {
     margin: 20px;
     display: inline-block;
+    border-radius: 20px;
 }
 
 button {
