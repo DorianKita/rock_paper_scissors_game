@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <h1>Rock, Paper, Scissors</h1>
 
     <div class="select">
@@ -23,22 +24,22 @@
     </div>
 
     <button class="start">Let's play!</button>
+    <div class="result_wrapper">
+        <div class="panel-left">
+            <h3>Game result</h3>
+            <p>Your choice: <span data-summary="your-choice"></span></p>
+            <p>Computer choice: <span data-summary="ai-choice"></span></p>
+            <h2>Winner: <span data-summary="who-win"></span></h2>
+        </div>
 
-    <div class="panel-left">
-        <h3>Game result</h3>
-        <p>Your choice: <span data-summary="your-choice"></span></p>
-        <p>Computer choice: <span data-summary="ai-choice"></span></p>
-        <h2>Winner: <span data-summary="who-win"></span></h2>
+        <div class="panel-right">
+            <h3>Summary results</h3>
+            <p class="numbers">Games: <span>0</span></p>
+            <p class="wins">Won: <span>0</span></p>
+            <p class="losses">Losses: <span>0</span></p>
+            <p class="draws">Draws: <span>0</span></p>
+        </div>
     </div>
-
-    <div class="panel-right">
-        <h3>Summary results</h3>
-        <p class="numbers">Games: <span>0</span></p>
-        <p class="wins">Won: <span>0</span></p>
-        <p class="losses">Losses: <span>0</span></p>
-        <p class="draws">Draws: <span>0</span></p>
-    </div>
-
     <footer>
         <div>
             <a
@@ -46,6 +47,7 @@
                 by macrovector</a> on Freepik
         </div>
     </footer>
+
     <script src="app.js"></script>
 </body>
 
