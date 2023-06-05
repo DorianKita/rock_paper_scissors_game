@@ -62,6 +62,11 @@ function publishResult(player, ai, result) {
     }
 };
 
+function endGame(player) {
+    document.querySelector(`[data-option=${player}]`).style.boxShadow = "";
+    game.playerHand = ""
+}
+
 function startGame() {
     if (!game.playerHand) return alert("Choose your hand!");
     gameSummary.numbers++
@@ -70,6 +75,7 @@ function startGame() {
     const gameResult = checkResult(game.playerHand, game.aiHand);
     console.log(gameResult)
     publishResult(game.playerHand, game.aiHand, gameResult);
+    endGame(game.playerHand);
 };
 
 btn.addEventListener("click", startGame);
